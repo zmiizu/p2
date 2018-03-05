@@ -232,6 +232,12 @@ void deleteBase(Planet &planet)
     getline(cin,name);
 
     for(unsigned i = 0; i < planet.bases.size(); i++){
+        if(name != planet.bases[i].name){
+            error(ERR_WRONG_BASE_NAME);
+        }
+    }
+
+    for(unsigned i = 0; i < planet.bases.size(); i++){
         if(name == planet.bases[i].name){
             cout << planet.bases[i].name << endl;
             cout << "Delete (Y/N)?";
@@ -255,6 +261,12 @@ void deleteShip(Planet &planet)
 
     cout << "Enter ship name: ";
     getline(cin,name);
+
+    for(unsigned i = 0; i < planet.ships.size(); i++){
+        if(name != planet.ships[i].name) {
+            error(ERR_WRONG_SHIP_NAME);
+        }
+    }
 
     for(unsigned i = 0; i < planet.ships.size(); i++){
         if(name == planet.ships[i].name){
