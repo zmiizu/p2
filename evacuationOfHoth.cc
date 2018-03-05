@@ -227,24 +227,26 @@ void deleteBase(Planet &planet)
     if(planet.bases.size() == 0){
         error(ERR_NO_BASES);
     }
+    else {
 
-    cout << "Enter base name: ";
-    getline(cin,name);
+        cout << "Enter base name: ";
+        getline(cin,name);
 
-    for(unsigned i = 0; i < planet.bases.size(); i++){
-        if(name != planet.bases[i].name){
-            error(ERR_WRONG_BASE_NAME);
+        for(unsigned i = 0; i < planet.bases.size(); i++){
+            if(name != planet.bases[i].name){
+                error(ERR_WRONG_BASE_NAME);
+            }
         }
-    }
 
-    for(unsigned i = 0; i < planet.bases.size(); i++){
-        if(name == planet.bases[i].name){
-            printBase(planet.bases[i]);
-            cout << "Delete (Y/N)? ";
-            getline(cin,yn);
+        for(unsigned i = 0; i < planet.bases.size(); i++){
+            if(name == planet.bases[i].name){
+                printBase(planet.bases[i]);
+                cout << "Delete (Y/N)? ";
+                getline(cin,yn);
 
-            if(yn == "Y"){
-                planet.bases.erase(planet.bases.begin()+i);
+                if(yn == "Y"){
+                    planet.bases.erase(planet.bases.begin()+i);
+                }
             }
         }
     }
@@ -258,28 +260,29 @@ void deleteShip(Planet &planet)
     if(planet.ships.size() == 0){
         error(ERR_NO_SHIPS);
     }
+    else {
 
-    cout << "Enter ship name: ";
-    getline(cin,name);
+        cout << "Enter ship name: ";
+        getline(cin,name);
 
-    for(unsigned i = 0; i < planet.ships.size(); i++){
-        if(name != planet.ships[i].name) {
-            error(ERR_WRONG_SHIP_NAME);
+        for(unsigned i = 0; i < planet.ships.size(); i++){
+            if(name != planet.ships[i].name) {
+                error(ERR_WRONG_SHIP_NAME);
+            }
         }
-    }
 
-    for(unsigned i = 0; i < planet.ships.size(); i++){
-        if(name == planet.ships[i].name){
-            printShip(planet.ships[i]);
-            cout << "Delete (Y/N)? ";
-            getline(cin, yn);
+        for(unsigned i = 0; i < planet.ships.size(); i++){
+            if(name == planet.ships[i].name){
+                printShip(planet.ships[i]);
+                cout << "Delete (Y/N)? ";
+                getline(cin, yn);
 
-            if(yn == "Y"){
-                planet.ships.erase(planet.ships.begin()+i);
+                if(yn == "Y"){
+                    planet.ships.erase(planet.ships.begin()+i);
+                }
             }
         }
     }
-
 }
 
 void evacuationPlan(Planet &planet)
