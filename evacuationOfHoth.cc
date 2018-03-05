@@ -239,7 +239,7 @@ void deleteBase(Planet &planet)
 
     for(unsigned i = 0; i < planet.bases.size(); i++){
         if(name == planet.bases[i].name){
-            cout << planet.bases[i].name << endl;
+            cout << printBase << endl;
             cout << "Delete (Y/N)?";
             getline(cin,yn);
 
@@ -270,7 +270,7 @@ void deleteShip(Planet &planet)
 
     for(unsigned i = 0; i < planet.ships.size(); i++){
         if(name == planet.ships[i].name){
-            cout << planet.ships[i].name << endl;
+            cout << printShip << endl;
             cout << "Delete (Y/N)?";
             getline(cin, yn);
 
